@@ -1,50 +1,55 @@
-<h1>Products</h1>
-<% if @products.any? %>
-  <ul>
-    <% @products.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no products yet.</p>
-<% end %>
-<p><%= link_to "Create new product", new_product_path %></p>
 <div class="row">
-  <div class="col">
-    <h3>Most Reviewed Product</h3>
-    <% if @products.most_reviewed.any? %>
-  <ul>
-    <% @products.most_reviewed.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
+  <div class="col-md-4 sidebar">
+    <div>
+      <h3>Most Reviewed Product</h3>
+      <% if @products.most_reviewed.any? %>
+        <ul>
+          <% @products.most_reviewed.each do |product| %>
+            <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <hr>
+      <div>
+        <h3>Recently Added Products</h3>
+        <% if @products.threecent.any? %>
+          <ul>
+            <% @products.threecent.each do |product| %>
+              <li><%= link_to product.name, product_path(product) %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <p>There are no products yet.</p>
+        <% end %>
+      </div>
+    <% else %>
+      <p>There are no products with reivews yet.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no products with reivews yet.</p>
-<% end %>
+    <hr>
+    <div>
+      <h3>Made in USA</h3>
+      <% if @products.country("United States of America").any? %>
+        <ul>
+          <% @products.country("United States of America").each do |product| %>
+            <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>There are no products yet.</p>
+      <% end %>
+    </div>
   </div>
-  <div class="col">
-    <h3>Recently Added Products</h3>
-    <% if @products.threecent.any? %>
-  <ul>
-    <% @products.threecent.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
+  <div class="col main-content">
+    <h1>Products</h1>
+    <% if @products.any? %>
+        <div class="row">
+      <% @products.each do |product| %>
+          <%= render :partial => "layouts/product_card", :locals => {:product => product} %>
+      <% end %>
+        </div>
+    <% else %>
+      <p>There are no products yet.</p>
     <% end %>
-  </ul>
-<% else %>
-  <p>There are no products yet.</p>
-<% end %>
+    <p><%= link_to "Create new product", new_product_path %></p>
   </div>
-  <div class="col">
-    <h3>Made in USA</h3>
-    <% if @products.country("United States of America").any? %>
-  <ul>
-    <% @products.country("United States of America").each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no products yet.</p>
-<% end %>
-  </div>
-</div>
 </div>

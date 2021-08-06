@@ -13,3 +13,20 @@
  */
 
 @import "bootstrap";
+
+body {
+  background-color: #3C312E;
+}
+
+.container {
+  border: solid #8B3119 .5rem;
+  background-color:white;
+}
+
+.card {
+  background-color:#A7D827;
+  border: solid #5D8C68 .25rem;
+}
+.navbar {
+  background-color: #5D8C68 !important;
+}
