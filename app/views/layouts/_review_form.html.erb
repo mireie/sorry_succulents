@@ -1,14 +1,10 @@
 <%= render "layouts/errors", :object => @product %>
-<%= form_for @product do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :cost %>
-  <%= f.number_field :cost %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.label :country_of_origin %>
-  <%= f.text_field :country_of_origin %>
+<%= form_for [@product, @review] do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating, in: 1..5, step: 1 %>
+  <%= f.label :content_body %>
+  <%= f.text_area :content_body %>
   <%= f.submit %>
 <%end%>
