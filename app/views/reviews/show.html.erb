@@ -1,18 +1,8 @@
 <h1><%= @product.name %></h1>
 
-<% if @product.reviews.any? %>
-  <h4>Here are the reviews for this product:</h4>
-
-  <% @product.reviews.each do |review| %>
-    <ul>
-      <li>
-        <%= link_to review.name, product_review_path(@product, review) %>
-      </li>
-    </ul>
-  <% end %>
-<% else %>
-  <p>No reviews are listed for this product.</p>
-<% end %>
+<p>Author: <%= @review.author%></p>
+<p>Rating: <%= @review.rating%></p>
+<p>Review: <%= @review.content_body%></p>
 
 <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
 
