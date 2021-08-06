@@ -11,6 +11,7 @@ class Product < ApplicationRecord
             .joins(:reviews)
             .group("products.id")
             .order("reviews_count")
+            .reverse_order
             .limit(1))
         }
   scope :threecent, -> { order(created_at: :desc).limit(3)}
