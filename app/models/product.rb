@@ -4,4 +4,9 @@ class Product < ApplicationRecord
     validates field, presence: true
   end
   validates_length_of :name, maximum: 50
+  before_save(:titleize_product)
+  private
+  def titleize_product
+    self.name = self.name.titleize
+  end
 end
