@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Product.destroy_all
+
+50.times do
+  Product.create!( 
+    name: Faker::Hipster.words(number: 3, spaces_allowed:true).join(" "),
+    description: Faker::Hipster.paragraph,
+    cost: Faker::Number.decimal(r_digits:2),
+    price: Faker::Number.decimal(r_digits:2),
+    country_of_origin: Faker::Address.country
+  )
+end
+
+p "Created #{Product.count} products"
