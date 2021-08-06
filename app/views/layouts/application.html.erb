@@ -25,6 +25,12 @@
         </nav>
       </div>
       <div class="row">
+        <div class="col flash-errors">
+          <%= flash[:alert] %>
+          <%= flash[:notice] %>
+        </div>
+      </div>
+      <div class="row">
         <div class="col">
           <%= yield %>
         </div>
