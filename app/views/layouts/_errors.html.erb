@@ -1,8 +1,10 @@
 <% if @product.errors.any? %>
-  <h3>Please fix these errors:</h3>
-  <ul>
-    <% @product.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <div class="errors">
+    <h4>Please fix these errors:</h4>
+    <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

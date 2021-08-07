@@ -1,5 +1,7 @@
 <div class="row">
-  <div class="col-md-4 sidebar">
+  <h1>Products</h1>
+  <hr>
+  <div class="col-sm-3 sidebar">
     <div>
       <h3>Most Reviewed Product</h3>
       <% if @products.most_reviewed.any? %>
@@ -38,18 +40,22 @@
         <p>There are no products yet.</p>
       <% end %>
     </div>
+    <hr>
+    <div class="add-parent">
+      <%= link_to new_product_path do %>
+        <div class="add-child">Create New Product</div>
+      <%end%>
+    </div>
   </div>
   <div class="col main-content">
-    <h1>Products</h1>
     <% if @products.any? %>
-        <div class="row">
-      <% @products.each do |product| %>
+      <div class="row">
+        <% @products.each do |product| %>
           <%= render :partial => "layouts/product_card", :locals => {:product => product} %>
-      <% end %>
-        </div>
+        <% end %>
+      </div>
     <% else %>
       <p>There are no products yet.</p>
     <% end %>
-    <p><%= link_to "Create new product", new_product_path %></p>
   </div>
 </div>

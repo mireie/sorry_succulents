@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "visit pages" do
   it "shows a product when clicked from the product" do
     visit products_path
-    click_link 'Create new product'
+    click_on 'Create New Product'
     fill_in 'Name', :with => 'Pokey Friend'
     fill_in 'Cost', :with => 13
     fill_in 'Price', :with => 14

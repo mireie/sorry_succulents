@@ -1,28 +1,25 @@
 <h1><%= @product.name %></h1>
 <h3><%= @product.country_of_origin %></h3>
-
 <strong>Product Description:</strong>
 <p><%=@product.description%></p>
-
+<h2>Reviews</h2>
+<div class="add-parent">
+      <%= link_to new_product_review_path(@product) do %>
+        <div class="add-child">Add New Review</div>
+      <%end%>
+    </div>
 <% if @product.reviews.any? %>
-  <h4>Here are the reviews for this product:</h4>
-
-  <% @product.reviews.each do |review| %>
-    <ul>
-      <li>
-        <%= link_to review.author, product_review_path(@product, review) %>
-      </li>
-    </ul>
-  <% end %>
+  <div class="row">
+    <% @product.reviews.each do |review| %>
+      <%= render :partial => "layouts/review_card", :locals => {:review => review} %>
+    <% end %>
+  </div>
 <% else %>
-  <p>No reviews are listed for this product.</p>
+  <p>There are no reviews yet.</p>
 <% end %>
-
-<p><%= link_to "Add a review", new_product_review_path(@product) %></p>
-
+<hr>
+<h3>Product Admin Panel</h3>
 <p><%= link_to "Edit", edit_product_path(@product) %></p>
 <p><%= link_to "Delete product", product_path(@product),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
-
-<p><%= link_to "Return to products", products_path %></p>

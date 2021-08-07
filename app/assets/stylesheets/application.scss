@@ -28,5 +28,24 @@ body {
   border: solid #5D8C68 .25rem;
 }
 .navbar {
-  background-color: #5D8C68 !important;
+  border-bottom: solid #5D8C68 .25rem;
+}
+
+.errors {
+  background-color: lightcoral;
+}
+
+.add-child {
+  margin:auto;
+  padding:1rem;
+  border: solid #303030 1px;
+  text-align: center;
+  background-color:#5D8C68;
+}
+.add-child {
+  color:white;
+  font-weight:bolder;
+}
+.add-parent a {
+  text-decoration: none;
 }

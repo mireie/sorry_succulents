@@ -1,0 +1,21 @@
+<div class="col-md-6">
+  <div class="card m-1">
+    <div class="card-body">
+      <h5 class="card-title"><%=link_to review.author, product_review_path(@product, review)%></h5>
+      <ul>
+        <h3><span style="color:#FFE356">
+            <% review.rating.to_i.times do %>
+              ★
+            <%end%>
+          </span>
+          <span style="color:#E1FAFD">
+            <%(5-review.rating.to_i).times do %>
+              ★
+            <%end%>
+          </span>
+        </h3>
+        <p><%=review.content_body%></p>
+      </ul>
+    </div>
+  </div>
+</div>
