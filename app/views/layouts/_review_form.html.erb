@@ -1,4 +1,4 @@
-<%= render "layouts/errors", :object => @product %>
+<%= render "layouts/errors_review", :object => @review %>
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :author %>
   <%= f.text_field :author, class: "form-control"  %>
