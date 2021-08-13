@@ -20,12 +20,18 @@
               <li class="nav-item">
                 <a class="nav-link" href="/products">Products</a>
               </li>
+              <% if current_user && current_user.admin?%>
+            
+              <li class="nav-item nav-admin nav-link"><strong>Admin Controls</strong></li>
+              <li class="nav-item nav-admin"><%= link_to "Add Product", new_product_url,  class: "nav-link" %></li>
+
+              <%end%>
             </ul>
             <div id="user-info">
               <% if current_user %>
                 <%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out', :method => :delete %>
               <% else %>
-                <%= link_to "Sign up", '/users/sign_up' %> | <%= link_to "Sign in", '/users/sign_in' %>
+                <%= link_to "Sign up", '/users/sign_up' %> | <%= link_to "Sign in", '/users/sign_in'%>
               <% end %>
             </div>
           </div>

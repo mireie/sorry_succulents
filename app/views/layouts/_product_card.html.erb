@@ -6,7 +6,7 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Country of Origin: <%=product.country_of_origin%></li>
       <li class="list-group-item">Price: $<%=product.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></li>
-      <li class="list-group-item"> <%=product.reviews.size%> Reviews</li>
+      <li class="list-group-item"> <%=product.reviews.size%> Review<% if product.reviews.size != 1 %>s<%end%></li>
     </ul>
   </div>
 </div>
