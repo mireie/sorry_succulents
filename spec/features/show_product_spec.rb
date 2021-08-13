@@ -2,8 +2,14 @@ require 'rails_helper'
 
 describe "visit pages" do
   it "shows a product when clicked from the product" do
-    visit products_path
-    click_on 'Create New Product'
+      user = User.create(:email => 'test@example.com', :password => 'password-test', admin: true)
+      visit new_user_session_url
+      fill_in 'Email', :with => user.email
+      fill_in 'Password', :with => 'password-test'
+      click_on 'Log in'
+      visit new_product_path
+
+
     fill_in 'Name', :with => 'Pokey Friend'
     fill_in 'Cost', :with => 13
     fill_in 'Price', :with => 14

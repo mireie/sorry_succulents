@@ -4,6 +4,6 @@ module ApplicationHelper
   end
   
   def is_customer?
-    current_user && current_user.is_customer?
+    current_user && current_user.customer
   end
 end
