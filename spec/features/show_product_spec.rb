@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "visit pages" do
   it "shows a product when clicked from the product" do
-    product = Product.create(
+    Product.create(
       :name => "Pokey Friend",
       :cost => 13, :price => 14,
       :description => "This needs to be fairly long so I will add a couple more words and we should be there.",
@@ -20,7 +20,7 @@ describe "visit pages" do
     fill_in "Email", :with => user.email
     fill_in "Password", :with => "password-test"
     click_on "Log in"
-    product = Product.create(
+    Product.create(
       :name => "Pokey Friend",
       :cost => 13, :price => 14,
       :description => "This needs to be fairly long so I will add a couple more words and we should be there.",
