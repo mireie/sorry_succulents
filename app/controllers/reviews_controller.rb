@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :show]
   before_action :authorize_customer, :authorize_admin, only: [:new, :create]
   before_action :authorize_admin, only: [:edit, :update, :destroy]
   

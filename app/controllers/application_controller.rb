@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
       if request.referrer == nil
         redirect_to root_path
       else
-        redirect_to requrest.referrer
+        redirect_to request.referrer
       end
     end
     if signed_in? == true
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
       if request.referrer == nil
         redirect_to root_path
       else
-        redirect_to requrest.referrer
+        redirect_to request.referrer
       end
     end
     if signed_in? == true 
