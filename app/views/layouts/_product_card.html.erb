@@ -21,6 +21,9 @@
       </li>
       <li class="list-group-item">Country of Origin: <%=product.country_of_origin%></li>
       <li class="list-group-item">Price: $<%=product.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></li>
+      <% if is_admin? %>
+      <li class="list-group-item"><span class="nav-admin">Cost: $<%=product.cost.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%> (Admin only)</span></li>
+      <%end%>
     </ul>
   </div>
 </div>

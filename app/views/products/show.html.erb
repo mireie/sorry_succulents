@@ -1,4 +1,10 @@
 <h1><%= @product.name %></h1>
+<h3>$<%= @product.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></h3>
+<%if is_admin? %>
+  <div class="nav-admin">
+  </div>
+<%end%>
+</h3>
 <h3><%= @product.country_of_origin %></h3>
 <strong>Product Description:</strong>
 <p><%=@product.description%></p>
@@ -18,10 +24,18 @@
   <p>There are no reviews yet.</p>
 <% end %>
 <%if is_admin? %>
-<hr>
-  <h3>Product Admin Panel</h3>
-  <p><%= link_to "Edit", edit_product_path(@product) %></p>
-  <p><%= link_to "Delete product", product_path(@product),
+  <div class="row nav-admin">
+    <h3>Product Admin Panel</h3>
+  <hr>
+    <div class="col">
+      <h4>Cost: $<%=@product.cost.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></h4>
+      <h4>Profit: $<%=(@product.price - @product.cost).to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></h4>
+    </div>
+    <div class="col">
+      <p><%= link_to "Edit", edit_product_path(@product) %></p>
+      <p><%= link_to "Delete product", product_path(@product),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
+    </div>
+  </div>
 <%end%>
