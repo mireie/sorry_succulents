@@ -4,9 +4,23 @@
       <h5 class="card-title"><%=link_to product.name, product_path(product)%></h5>
     </div>
     <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <% if product.reviews.size > 0%>
+          <span style="color:#FFE356">
+            <% product.avg_rating.to_i.times do %>
+              ★
+            <%end%>
+          </span>
+          <span style="color:#E1FAFD">
+            <%(5-product.avg_rating.to_i).times do %>
+              ★
+            <%end%></span> (<%=product.reviews.size%> Review<% if product.reviews.size != 1 %>s)<%end%>
+        <%else%>
+          No Reviews Yet!
+        <%end%>
+      </li>
       <li class="list-group-item">Country of Origin: <%=product.country_of_origin%></li>
       <li class="list-group-item">Price: $<%=product.price.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse%></li>
-      <li class="list-group-item"> <%=product.reviews.size%> Review<% if product.reviews.size != 1 %>s<%end%></li>
     </ul>
   </div>
 </div>

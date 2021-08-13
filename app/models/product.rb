@@ -14,10 +14,18 @@ class Product < ApplicationRecord
             .reverse_order
             .limit(1))
         }
+        def avg_rating
+          if self.reviews.size > 0
+          return self.reviews.sum(:rating) / self.reviews.size
+          else 
+            return -1
+          end
+        end
   scope :threecent, -> { order(created_at: :desc).limit(3)}
   private
 
   def titleize_product
     self.name = self.name.titleize
   end
+
 end
