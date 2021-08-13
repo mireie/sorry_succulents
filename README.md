@@ -11,6 +11,9 @@
 * Pry
 * Sinatra
 * Capybara
+* Faker
+* Simplecov
+* Devise
 
 ## Description
 The first half of a two-day project to create a web portal for a Ruby on Rails website to manage one-to-many relationships between products and reviews.

@@ -14,7 +14,7 @@
           <span style="color:#E1FAFD">
             <%(5-product.avg_rating.to_i).times do %>
               ★
-            <%end%></span> (<%=product.reviews.size%> Review<% if product.reviews.size != 1 %>s)<%end%>
+            <%end%></span> (<%=product.reviews.size%> Review<% if product.reviews.size != 1 %>s<%end%>)
         <%else%>
           No Reviews Yet!
         <%end%>

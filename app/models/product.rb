@@ -16,7 +16,7 @@ class Product < ApplicationRecord
         }
         def avg_rating
           if self.reviews.size > 0
-          return self.reviews.sum(:rating) / self.reviews.size
+          return (self.reviews.sum(:rating).to_f / self.reviews.size.to_f).to_f.round
           else 
             return -1
           end
