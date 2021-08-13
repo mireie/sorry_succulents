@@ -4,10 +4,10 @@
 <p><%=@product.description%></p>
 <h2>Reviews</h2>
 <div class="add-parent">
-      <%= link_to new_product_review_path(@product) do %>
-        <div class="add-child">Add New Review</div>
-      <%end%>
-    </div>
+  <%= link_to new_product_review_path(@product) do %>
+    <div class="add-child">Add New Review</div>
+  <%end%>
+</div>
 <% if @product.reviews.any? %>
   <div class="row">
     <% @product.reviews.each do |review| %>
@@ -17,9 +17,11 @@
 <% else %>
   <p>There are no reviews yet.</p>
 <% end %>
+<%if is_admin? %>
 <hr>
-<h3>Product Admin Panel</h3>
-<p><%= link_to "Edit", edit_product_path(@product) %></p>
-<p><%= link_to "Delete product", product_path(@product),
+  <h3>Product Admin Panel</h3>
+  <p><%= link_to "Edit", edit_product_path(@product) %></p>
+  <p><%= link_to "Delete product", product_path(@product),
                         :data => {:confirm => "Are you sure?",
                                        :method => "delete"} %></p>
+<%end%>
