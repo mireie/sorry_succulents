@@ -16,7 +16,7 @@
 * Devise
 
 ## Description
-A two-day project to create a web portal for a Ruby on Rails website to manage one-to-many relationships between products and reviews. The second day focuesd on adding authentication for users of different scopes.
+A two-day project to create a web portal for a Ruby on Rails website to manage one-to-many relationships between products and reviews. The second day focused on adding authentication for users of different scopes.
 
 ## Setup/Installation Requirements
 
