@@ -41,6 +41,7 @@ A two-day project to create a web portal for a Ruby on Rails website to manage o
 
 ## Links
 - [GitHub Repo](https://github.com/mireie/sorry_succulents)
+- [Heroku](https://sorry-succulents.herokuapp.com/)
 
 ## Known Bugs
 
