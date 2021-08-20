@@ -9,7 +9,7 @@
 Product.destroy_all
 Review.destroy_all
 
-50.times do
+100.times do
   Product.create!(
     name: Faker::Hipster.words(number: 3, spaces_allowed: true).join(" "),
     description: Faker::Hipster.paragraph,
@@ -24,7 +24,7 @@ p "Created #{Product.count} products."
 @products = Product.all
 
 @products.each do |product|
-  rand(0..5).times do
+  rand(0..20).times do
     Review.create!(
       author: Faker::Name.name,
       rating: rand(1..5),
