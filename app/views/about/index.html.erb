@@ -1,7 +1,9 @@
-<h1>Welcome to Sorry Succulents!</h1>
-<p>Have you ever wanted to say sorry to someone but sending flowers just doesn't seem appropriate? Sorry Succulents is here to help! We carry the largest collection of succulents to tell that special someone you're sorry. <a href="/products/">View our selection of products and see for yourself.</a></p>
+<div class="col">
+  <h1>Welcome to Sorry Succulents!</h1>
+  <p>Have you ever wanted to say sorry to someone but sending flowers just doesn't seem appropriate? Sorry Succulents is here to help! We carry the largest collection of succulents to tell that special someone you're sorry.<br>
+    <a href="/products/">View our selection of products and see for yourself.</a></p>
 <div class="row">
-  <div class="col-4">
+  <div class="col-md-4">
     <h2>Most Reviewed Product</h2>
     <% if @products.most_reviewed.any? %>
       <ul>
@@ -10,7 +12,7 @@
         <% end %>
       </ul>
     </div>
-    <div class="col-4">
+    <div class="col-md-4">
       <h2>Recently Added Products</h2>
       <% if @products.threecent.any? %>
         <ul>
@@ -25,7 +27,7 @@
   <% else %>
     <p>There are no products with reivews yet.</p>
   <% end %>
-  <div class="col-4">
+  <div class="col-md-4">
     <h2>Made in USA</h2>
     <% if @products.country("United States of America").any? %>
       <ul>
@@ -38,3 +40,8 @@
     <% end %>
   </div>
 </div>
+
+</div>
+<div class="col-4" style="padding-right:0">
+  <img src ="/images/about-bg.jpg" style="float:right; width:100%;">
+  </div>

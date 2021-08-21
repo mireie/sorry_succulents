@@ -39,21 +39,19 @@
           </div>
         </nav>
       </div>
-          <%if flash[:alert] %>
-            <div class="alert alert-danger mt-3" role="alert">
-              <%= flash[:alert] %>
-            </div>
-          <%end%>
-          <%if flash[:notice] %>
-            <div class="alert alert-success mt-3" role="alert">
-              <%= flash[:notice] %>
-            </div>
-          <%end%>
-          <div class="row">
-            <div class="col">
-              <%= yield %>
-            </div>
-          </div>
+      <%if flash[:alert] %>
+        <div class="alert alert-danger mt-3" role="alert">
+          <%= flash[:alert] %>
         </div>
-      </body>
-    </html>
+      <%end%>
+      <%if flash[:notice] %>
+        <div class="alert alert-success mt-3" role="alert">
+          <%= flash[:notice] %>
+        </div>
+      <%end%>
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

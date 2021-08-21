@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   end
   validates_length_of :name, maximum: 100
   before_save(:titleize_product)
-  scope :country, ->(country) { where(country_of_origin: country) }
+  scope :country, ->(country) { where(country_of_origin: country).limit(5) }
   scope :most_reviewed, -> {
           (select("products.id, products.name, count(reviews.id) as reviews_count")
             .joins(:reviews)
