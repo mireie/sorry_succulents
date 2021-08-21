@@ -15,4 +15,5 @@ describe "the sign in proccess" do
     end
     expect(page).to have_content "Signed in successfully."
   end
+
 end
