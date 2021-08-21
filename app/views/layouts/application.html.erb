@@ -30,7 +30,7 @@
               </ul>
               <div id="user-info">
                 <% if current_user %>
-                  <%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out', :method => :delete %>
+                  <%= link_to current_user.email, edit_user_registration_url %> | <%= link_to "Sign out", '/users/sign_out', :method => :delete %>
                 <% else %>
                   <%= link_to "Sign up", '/users/sign_up' %> | <%= link_to "Sign in", '/users/sign_in'%>
                 <% end %>
