@@ -26,7 +26,7 @@ A two-day project to create a web portal for a Ruby on Rails website to manage o
 * Bundler is required, install using the terminal with `gem install bundler`
 * Ensure PostgreSQL is installed and correctly running on your local machine
 * Clone public repository from GitHub using `git clone https://github.com/mireie/sorry_succulents`
-* Install all dependencies with `bundle install`
+* Navigate to the project directory and install all dependencies with `bundle install`
 * Create and enter a directory on your local machine for the project
 * Seed the database with products and reviews with the terminal command `rake db:seed`
 * To run tests, in the terminal run `rspec`

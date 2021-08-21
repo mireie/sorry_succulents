@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Sorry Succulents</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,47 +13,47 @@
     <div class="container">
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="/">Sorry Succulents</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="/products">Products</a>
-              </li>
-              <% if current_user && current_user.admin?%>
-            
-              <li class="nav-item nav-admin nav-link"><strong>Admin Controls</strong></li>
-              <li class="nav-item nav-admin"><%= link_to "Add Product", new_product_url,  class: "nav-link" %></li>
-
-              <%end%>
-            </ul>
-            <div id="user-info">
-              <% if current_user %>
-                <%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out', :method => :delete %>
-              <% else %>
-                <%= link_to "Sign up", '/users/sign_up' %> | <%= link_to "Sign in", '/users/sign_in'%>
-              <% end %>
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">Sorry Succulents</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="/products">Products</a>
+                </li>
+                <% if current_user && current_user.admin?%>
+                  <li class="nav-item nav-admin nav-link"><strong>Admin Controls</strong></li>
+                  <li class="nav-item nav-admin"><%= link_to "Add Product", new_product_url,  class: "nav-link" %></li>
+                <%end%>
+              </ul>
+              <div id="user-info">
+                <% if current_user %>
+                  <%= current_user.email %> | <%= link_to "Sign out", '/users/sign_out', :method => :delete %>
+                <% else %>
+                  <%= link_to "Sign up", '/users/sign_up' %> | <%= link_to "Sign in", '/users/sign_in'%>
+                <% end %>
+              </div>
             </div>
           </div>
         </nav>
       </div>
-      <%if flash[:alert] %>
-        <div class="alert alert-danger mt-3" role="alert">
-          <%= flash[:alert] %>
+          <%if flash[:alert] %>
+            <div class="alert alert-danger mt-3" role="alert">
+              <%= flash[:alert] %>
+            </div>
+          <%end%>
+          <%if flash[:notice] %>
+            <div class="alert alert-success mt-3" role="alert">
+              <%= flash[:notice] %>
+            </div>
+          <%end%>
+          <div class="row">
+            <div class="col">
+              <%= yield %>
+            </div>
+          </div>
         </div>
-      <%end%>
-      <%if flash[:notice] %>
-        <div class="alert alert-success mt-3" role="alert">
-          <%= flash[:notice] %>
-        </div>
-      <%end%>
-      <div class="row">
-        <div class="col">
-          <%= yield %>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+      </body>
+    </html>

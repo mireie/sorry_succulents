@@ -8,7 +8,7 @@ describe "visit pages" do
       :description => "This needs to be fairly long so I will add a couple more words and we should be there.",
       :country_of_origin => "United States of America",
     )
-    visit ("/")
+    visit ("/products")
     within ".main-content" do
       click_on "Pokey Friend"
     end
@@ -26,7 +26,7 @@ describe "visit pages" do
       :description => "This needs to be fairly long so I will add a couple more words and we should be there.",
       :country_of_origin => "United States of America",
     )
-    visit ("/")
+    visit ("/products")
     within ".main-content" do
       click_on "Pokey Friend"
     end
