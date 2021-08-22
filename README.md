@@ -45,20 +45,20 @@ A two-day project to create a web portal for a Ruby on Rails website to manage o
 * You can also modify an existing user to make an admin with `rails c`. For a known `{user_id}`, run this command in the rails console: `User.find({user_id}).update(:admin => true)`
 
 
-## Links
+# Links
 - [GitHub Repo](https://github.com/mireie/sorry_succulents)
 - [Heroku](https://sorry-succulents.herokuapp.com/)
 
-## Known Bugs
+# Known Bugs
 
 * No known bugs at this time.
 
-## License
+# License
 
 [MIT](https://en.wikipedia.org/wiki/MIT_License)
 
 Copyright (c) 2021 Michael Reiersgaard
 
-## Contact Information
+# Contact Information
 
 Michael Reiersgaard michael.reiersgaard [at] gmail.com
