@@ -37,5 +37,7 @@ describe "the edit product process" do
     within ".main-content" do
       click_on "Pokey Friend"
     end
+    click_on "Delete product"
+    expect(page).to have_content "Product successfully deleted!"
   end
 end

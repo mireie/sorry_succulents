@@ -30,10 +30,6 @@ describe "the admin add a product process" do
     click_on "Sign out"
     visit new_product_path
     expect(page).to have_content "Please sign-in to continue."
-  end
-
-  it "doers not allow customers to add products" do
-    click_on "Sign out"
     customer = User.create(:email => "testcustomer@example.com", :password => "password-test", admin: false)
     visit new_user_session_url
     fill_in "Email", :with => customer.email
