@@ -30,7 +30,7 @@ A two-day project to create a web portal for a Ruby on Rails website to manage o
 
 ## Initializing the Database
 - Update the `config/database.yml` file to match your PostgreSQL setup
-- Initialize the database with `rake db:migrate`
+- Initialize the database with `rake db:create` and initialize tables with `rake db:migrate`
     - If you encounter errors here, your `database.yml` file is likely not set up correctly and you skipped the previous step!
 - Seed the database with products and reviews with the terminal command `rake db:seed`
 
