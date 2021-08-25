@@ -46,13 +46,15 @@ describe "the edit review process" do
     expect(page).to have_content "Review successfully deleted!"
   end
 
-  it "only allows admins to add reviews" do
+  it "only allows admins to edit reviews" do
     test_product = Product.all.first
+    review = test_product.reviews.first
     click_on "Sign out"
     click_on "Sign in"
     fill_in "Email", :with => "testcustomer@example.com"
     fill_in "Password", :with => "password-test"
-    visit ("/products/#{test_product.id}")
-    expect(page).not_to have_content "Admin Panel"
+    click_on "Log in"
+    visit ("/products/#{test_product.id}/reviews/#{review.id}/edit")
+    expect(page).to have_content "You aren't authorized to perform that action."
   end
 end
